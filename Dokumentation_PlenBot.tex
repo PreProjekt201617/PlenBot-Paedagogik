@@ -1,0 +1,96 @@
+\documentclass[11pt]{scrartcl}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\begin{document}
+\begin{center}
+ \huge {PlenBot Dokumentation}
+ \end{center}
+
+\section{Installation}
+\label{sec: Installation}
+Online Anleitung: https://github.com/plenprojectcompany/PLEN2
+Benötigte Software:
+\begin{itemize}
+\item Motion Installer und Repository für Bewegungen
+\item Control Server
+\item Arduino (hier sind die Treiber enthalten)
+\end{itemize}
+
+\raggedright Zum Ausführen wird der Motion Editor benötigt: http://plen.jp/playground/motion-editor/
+
+\newpage
+\begin{figure}
+
+\subsection{Motion Installer und Repository}
+\label{subsec: Motion Installer und Repository}
+\includegraphics{1.png}
+
+\caption{Repository downloaden und entzippen}
+\end{figure}
+
+
+\subsection{Download Motioninstaller}
+\label{subsec: Download Motioninstaller}
+\includegraphics{2.png}
+
+
+\subsection{Download ControlServer}
+\label{subsec: Download ControlServer}
+\includegraphics{3.png}
+
+
+\subsection{Version auswählen}
+\label{subsec: Version auswählen}
+\includegraphics{4.png}
+
+
+\subsection{Download Arduino}
+\label{subsec: Download Arduino}
+\includegraphics{5.png}
+\includegraphics{6.png}
+\includegraphics{7.png}
+\includegraphics{8.png}
+\includegraphics{9.png}
+\includegraphics{10.png}
+
+\newpage
+
+\section{Zuruecksetzen des Plens}
+Aufgrund der Arbeit mit dem PlenBot kann es natuerlich auch passieren, dass man den Plen einmal softwaretechnisch außer Gefecht setzt. Dann ist ein Reset der Software des Plens notwendig. Hierfuer benoetigt man Arduino. 
+\begin{itemize}
+\item[Schritt 1]
+Download des Repositories in dem sich die Firmware befindet unter:
+
+https://github.com/plenprojectcompany/PLEN2/tree/master/arduino 
+\item[Schritt 2]
+Veraendern der Build Config.h:
+Target Developer Edition muss auf true gesetzt werden
+\item
+\begin{center}
+\includegraphics{BuildConfig}
+\end{center}
+
+\item[Schritt 3]
+Firmware.ino mit Arduino starten
+\newpage
+\item[Schritt 4]
+Plen an PC anschliessen ueber USB und Upload per Arduiono
+
+Warnings und Mismatches sind hier normal, so lange in dem tuerkisen Bereich 'Done uploading' steht war der Upload erfolgreich. 
+
+\item
+\begin{center}
+\includegraphics{UploadArduino}
+\end{center}
+
+\item[Schritt 5]
+Starten des Control Servers und des lokalen Motion Editors (siehe auch Installation)
+
+\item[Schritt 6]
+Bei Load Motions alle Motions aus dem Verzeichnis hereinladen und anschliessend installieren. Der PlenBot ist dabei eingeschaltet und mit dem PC verbunden.
+\end{itemize}
+
+\end{document}
