@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage{graphicx}
+\usepackage{hyperref}  
 \begin{document}
 \begin{center}
  \huge {PlenBot Dokumentation}
@@ -59,6 +60,7 @@ Benötigte Software:
 \newpage
 
 \section{Zuruecksetzen des Plens}
+\label{sec: Reset Plen}
 Aufgrund der Arbeit mit dem PlenBot kann es natuerlich auch passieren, dass man den Plen einmal softwaretechnisch außer Gefecht setzt. Dann ist ein Reset der Software des Plens notwendig. Hierfuer benoetigt man Arduino. 
 \begin{itemize}
 \item[Schritt 1]
@@ -92,5 +94,52 @@ Starten des Control Servers und des lokalen Motion Editors (siehe auch Installat
 \item[Schritt 6]
 Bei Load Motions alle Motions aus dem Verzeichnis hereinladen und anschliessend installieren. Der PlenBot ist dabei eingeschaltet und mit dem PC verbunden.
 \end{itemize}
+
+\newpage
+\section{Fehler und mögliche Fehlerbehebung}
+\label{sec: Fehler/Fehlerbehebung}
+
+
+\subsection{Fehler}
+\label{subsec: Fehler}
+\subsubsection{Motions gelöscht}
+\label{subsubsec: Motions gelöscht}
+Wir nehmen an dass durch die Ausführung einer Funktion über Arduino auf den PlenBot die Firmware bzw. die Bewegungen des PlenBots geschädigt bzw. zerstört wurden. Durch Forumsbeiträge kann aber auch darauf geschlossen werden, dass das Problem an der Firmware der Plen Project Company liegt.
+
+
+Symptome:
+Beim Starten fängt der PlenBot an zu surren durch die falsche Einstellung der Servomotoren. Der PlenBot nimmt auch eine spezielle Körperhaltung ein.
+Siehe auch: 
+https://www.youtube.com/watch?v=yGtRbYB-iCU
+
+In dem Video sieht man wie der PlenBot Bewegungen ausführt, welche durch die falsche Grundkoerperhaltung jedoch nicht korrekt durchgeführt werden.
+ 
+\subsection{Fehlerbehebung}
+\label{subsec: Fehlerbehebung}
+
+\subsubsection{Neuinstallation Firmware}
+\label{subsubsec: Neuinst Firmware}
+ siehe Zuruecksetzen des Plens \autoref{sec: Reset Plen}
+ 
+\subsubsection{Neuinstallation Motions}
+\label{subsubsec: Neuinst Motions}
+
+\begin{itemize}
+\item[Schritt 1]
+Control Server starten (exe aus Installationsordner starten \autoref{subsec: Download ControlServer})
+\item[Schritt 2]
+PlenUtils starten. Diese Datei befindet sich ebenfalls im Installationsordner
+\item[Schritt 3]
+Button load Motions auswaehlen
+\item[Schritt 4]
+Die benötigten Dateien befinden sich im Github Repository der PlenBot Project Company \autoref{subsec: Download Motioninstaller} nur Download Repository notwendig.
+\item[Schritt 5]
+Button Install Motions auswaehlen
+\end{itemize}
+\subsubsection{Home Position zuruecksetzen}
+\label{subsubsec: Reset Home Position}
+Schritt 1 und 2 der Neuinstallation Motions \autoref{subsubsec: Neuinst Motions}
+Danach mithilfe des linken Bildes den passenden Servomotor auswählen und mithilfe der Trackbar einstellen. Anschließend klick auf "Home"
+
 
 \end{document}
